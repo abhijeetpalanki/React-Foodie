@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
-import Header from './Header';
+import Header from '../main/Header';
 import BadNutritionList from './BadNutritionList';
 import GoodNutritionList from './GoodNutritionList';
 

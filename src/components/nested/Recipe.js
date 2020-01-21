@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import Header from './Header';
+import Header from '../main/Header';
 
 const API_KEY = "486fbf093e3f4211b0fc1a92ee1783f2";
 

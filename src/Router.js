@@ -1,9 +1,9 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 
-import App from '../App';
-import Recipe from './Recipe';
-import Nutrition from './Nutrition';
+import App from './App';
+import Recipe from './components/nested/Recipe';
+import Nutrition from './components/nested/Nutrition';
 
 const Router = () => (
     <BrowserRouter>

@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import Form from './components/Form';
-import Recipes from './components/Recipes';
-import Header from './components/Header';
+import Form from './components/nested/Form';
+import Recipes from './components/main/Recipes';
+import Header from './components/main/Header';
 
 const API_KEY = "486fbf093e3f4211b0fc1a92ee1783f2";
 
