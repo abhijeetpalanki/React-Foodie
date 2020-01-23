@@ -1,48 +1,35 @@
 import React from 'react';
 import './App.css';
-import Form from './components/nested/Form';
-import Recipes from './components/main/Recipes';
-import Header from './components/main/Header';
-
-const API_KEY = "486fbf093e3f4211b0fc1a92ee1783f2";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Provider } from './context';
+import Index from './components/main/Index';
+import Navbar from './components/main/Navbar';
+import Products from './components/main/Products';
+import Product from './components/nested/Product';
+import Instructions from './components/recipes/instructions/Instructions';
+import Nutrition from './components/recipes/nutrition/Nutrition';
 
 class App extends React.Component {
-
-  state = {
-    recipes: []
-  }
-
-  getRecipe = async (e) => {
-    e.preventDefault();
-
-    const recipeName = e.target.elements.recipeName.value;
-    
-    const api_call = await fetch(`https://api.spoonacular.com/recipes/search?query=${recipeName}&apiKey=${API_KEY}&number=12`);
-    const data = await api_call.json();
-    
-    this.setState({ recipes: data.results });
-  }
-
-  // componentDidUpdate = () => {
-  //   const recipes = JSON.stringify(this.state.recipes);
-  //   localStorage.setItem("recipes", recipes);
-  // }
-
-  // componentDidMount = () => {
-  //   const json = localStorage.getItem("recipes");
-  //   const retrievedRecipes = JSON.parse(json);
-  //   this.setState({recipes: retrievedRecipes});
-  // }
-
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <Form getRecipe={this.getRecipe} />
-        <Recipes recipes={this.state.recipes} />
-      </div>
-    );
-  }
+	render() {
+		return (
+			<Provider>
+				<Router>
+					<React.Fragment>
+						<Navbar />
+						<div className="container">
+							<Switch>
+								<Route exact path="/" component={Index} />
+								<Route path="/recipe/instructions/:id" component={Instructions} />
+								<Route path="/recipe/nutrition/:id" component={Nutrition} />
+								<Route path="/products" component={Products} />
+								<Route path="/product/:id" component={Product} />
+							</Switch>
+						</div>
+					</React.Fragment>
+				</Router>
+			</Provider>
+		);
+	}
 }
 
 export default App;
