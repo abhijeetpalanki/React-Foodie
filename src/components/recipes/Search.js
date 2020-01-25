@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FaUtensils } from 'react-icons/fa';
-import { Consumer } from '../../context';
+import { RecipesConsumer } from '../../contexts/RecipesContext';
 import Axios from 'axios';
 
 class Search extends Component {
@@ -32,7 +32,7 @@ class Search extends Component {
 
 	render() {
 		return (
-			<Consumer>
+			<RecipesConsumer>
 				{(value) => {
 					const { dispatch } = value;
 					return (
@@ -59,7 +59,7 @@ class Search extends Component {
 						</div>
 					);
 				}}
-			</Consumer>
+			</RecipesConsumer>
 		);
 	}
 }
