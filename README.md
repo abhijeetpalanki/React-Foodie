@@ -1,1 +1,1 @@
-CLICK HERE TO LAUNCH WEBSITE - https://abhijeet-palanki-reactfoodie.netlify.app/
+VISIT HERE - https://abhijeet-palanki-reactfoodie.netlify.app/
